@@ -22,6 +22,5 @@ spec:
           name: books
           ports:
             - containerPort: 8080
-              hostPort: 8080
               protocol: TCP
       restartPolicy: Always
