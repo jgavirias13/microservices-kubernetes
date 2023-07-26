@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: books
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+    spec:
+      containers:
+        - image: jgavirias13/booksapp:v4
+          name: books
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+              protocol: TCP
+      restartPolicy: Always

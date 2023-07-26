@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendations
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - image: jgavirias13/recommendationsapp:v2
+          name: recommendations
+          ports:
+            - containerPort: 8081
+              hostPort: 8081
+              protocol: TCP
+      restartPolicy: Always
